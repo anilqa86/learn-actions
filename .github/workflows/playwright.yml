@@ -5,23 +5,22 @@ on:
   pull_request:
     branches: [ main, master ]
   workflow_dispatch:
-    inputs:
-      environments:
-        description: "Select the environment to test"
-        required: true
-        default: "qa"
-        type: choice
-        options:
-          - dev
-          - qa
-          - prod
+     inputs:
+       environment:
+         description: "select test environment"
+         required: true
+         type: choice
+         options:
+           - DEV
+           - QA     
+ 
        
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    env:
-      TEST_ENV: ${{ inputs.environments }}
+    environment: 
+      name: ${{ input.environments }}  
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
