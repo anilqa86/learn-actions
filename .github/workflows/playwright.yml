@@ -15,9 +15,7 @@ on:
           - dev
           - qa
           - prod
-        run: |
-          echo "Environment: ${{ inputs.environments }}"
-          echo "Environment: ${{ inputs.environments }}"
+       
 jobs:
   test:
     timeout-minutes: 60
