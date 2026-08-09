@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import {ENV} from './config/env'
+// import {ENV} from './config/env'
 
 /**
  * Playwright configuration for OrangeHRM Open Source Demo automation.
@@ -14,7 +14,7 @@ export default defineConfig({
   workers: 1,
   reporter: [['html'], ['list']],
   use: {
-    baseURL: ENV.baseURL,
+    baseURL: BASE_URL!,
     actionTimeout: 15000,
     navigationTimeout: 30000,
     trace: 'on-first-retry',
