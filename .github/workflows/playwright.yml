@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     environment: 
-      name: ${{ input.environments }}  
+      name: ${{ inputs.environments }}  
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -30,8 +30,14 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+    - name: Display environment
+      run: |
+         echo "Environment: ${{inputs.environment}}"
+         echo "Base URL: ${{ vars.BASE_URL }}"
     - name: Run Playwright tests
       run: npx playwright test
+      env:
+          BASE_URL: ${{ vars.BASE_URL }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
