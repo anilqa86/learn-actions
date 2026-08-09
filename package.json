@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     
-    "test:dev": "cross-env TEST_ENV=dev playwright test --headed",
+    "test:dev": "cross-env TEST_ENV=DEV playwright test --headed",
 
-    "test:qa": "cross-env TEST_ENV=qa playwright test --headed"
+    "test:qa": "cross-env TEST_ENV=QA playwright test --headed"
     
   },
   "keywords": [],
