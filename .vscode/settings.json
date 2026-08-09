@@ -1,0 +1,15 @@
+{
+    "chatgpt.gpt3.provider": "Ollama",
+    "chatgpt.gpt3.model": "custom",
+    "cursor.general.enableTab": false,
+    "cursor.completions.enabled": false,
+    "editor.inlineSuggest.enabled": false,
+    "editor.inlineSuggest.showToolbar": "never",
+    "editor.suggest.preview": false,
+    "cursor.cpp.disabledLanguages": [
+        "typescript",
+        "javascript",
+        "typescriptreact",
+        "javascriptreact"
+    ]
+}

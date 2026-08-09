@@ -1,0 +1,25 @@
+{
+  "name": "playwright-enterprise-container-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    
+    "test:dev": "cross-env TEST_ENV=dev playwright test --headed",
+
+    "test:qa": "cross-env TEST_ENV=qa playwright test --headed"
+    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.1.2"
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.4.2"
+  }
+}
