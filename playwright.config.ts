@@ -14,7 +14,7 @@ export default defineConfig({
   workers: 1,
   reporter: [['html'], ['list']],
   use: {
-    baseURL: BASE_URL!,
+    baseURL: process.env.BASE_URL,
     actionTimeout: 15000,
     navigationTimeout: 30000,
     trace: 'on-first-retry',
