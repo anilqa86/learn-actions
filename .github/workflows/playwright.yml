@@ -1,25 +1,20 @@
 name: Playwright Tests
 on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
   workflow_dispatch:
-     inputs:
-       environment:
-         description: "select test environment"
-         required: true
-         type: choice
-         options:
-           - DEV
-           - QA     
- 
-       
+    inputs:
+      environment:
+        description: "select environment"
+        required: true
+        type: choice
+        options:
+          - DEV
+          - QA
+            
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    environment: QA
+    environment: ${{inputs.environment }}
       
     steps:
     - uses: actions/checkout@v4
